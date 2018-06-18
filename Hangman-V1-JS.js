@@ -8,7 +8,7 @@ var wordsList = [];
 // Load the words from the dictionary text file to wordsList
 function init() {
     // words in test file: rises, bear, listed
-    var wordsFile = "https://raw.githubusercontent.com/tiffanyxho/Hangman_Revised/master/HangmanRevised-TestWordsList.txt";
+    var wordsFile = "https://raw.githubusercontent.com/tiffanyxho/Hangman-V1/master/Hangman-V1-TestWordsList.txt";
     $.get(wordsFile, function(data) {
       wordsList = data.split('\n');
     });
