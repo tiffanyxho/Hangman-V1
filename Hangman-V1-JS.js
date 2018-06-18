@@ -1,5 +1,5 @@
 //document.addEventListener('DOMContentLoaded',main);
-
+// test
 // initialize empty list called wordList
 var wordsList = [];
 
