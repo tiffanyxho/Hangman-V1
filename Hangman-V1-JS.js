@@ -1,5 +1,5 @@
 //document.addEventListener('DOMContentLoaded',main);
-// test
+// test commit 2
 // initialize empty list called wordList
 var wordsList = [];
 
