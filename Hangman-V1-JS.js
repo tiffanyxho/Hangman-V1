@@ -1,14 +1,11 @@
 // checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
 var checkEnter = window.addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
-        userWordGuessed = guessWord();
+        // set user guess using guessWord function
+        var userWordGuessed = guessWord();
+
+        // checks if user's word guessed is equal to random word using checkGuess function
         var guessRight = checkGuess('test', userWordGuessed);
-        
-            if (guessRight){
-                console.log('you win!');
-            }else{
-                console.log('try again');
-            }
     }
 }, false);
 
@@ -28,21 +25,11 @@ function guessWord(){
 /*window.onload = function main(){
     // store text file with list of words in wordsFile
     var wordsFile = "https://raw.githubusercontent.com/tiffanyxho/Hangman-V1/master/Hangman-V1-TestWordsList.txt";
-    
-    // variable wordList will store list of words from wordsFile
-    var wordList;
-    var list = init();
 
     // separate words in wordList into strings and store in array using split
     $.get(wordsFile, function(data) {
-        wordList = data.split('\n');
-        wordList.forEach(function(element) {
-            console.log(element);
-        });
+        var wordList = data.split('\n');
     });
-
-    var testArr = array();
-    printArr(testArr);
 }*/
 
 // checks if randomWord == userGuess & log result & return value: true/right or false/wrong
