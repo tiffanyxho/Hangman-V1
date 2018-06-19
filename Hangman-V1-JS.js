@@ -1,20 +1,17 @@
-// checks when user pushes enter key
+// checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
 var checkEnter = window.addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
         userWordGuessed = guessWord();
+        var guessRight = checkGuess('test', userWordGuessed);
+        
+            if (guessRight){
+                console.log('you win!');
+            }else{
+                console.log('try again');
+            }
     }
 }, false);
 
-// executes when enter is pressed, prints if user guess is right or wrong
-window.addEventListener('checkEnter', function (  ) {
-    var guessRight = checkGuess('test', userWordGuessed);
-
-    if (guessRight){
-        console.log('you win!');
-    }else{
-        console.log('try again');
-    }
-}, false);
 
 // initialize empty list called wordList
 var wordsList = ['wooooo'];
@@ -70,30 +67,13 @@ window.onload = function init() {
         wordList = data.split('\n');
         //return wordList;
     });
-    // alternate option for top...  not sure which works better
-    /*$(document).ready(function () {
-        $.get('https://raw.githubusercontent.com/tiffanyxho/Hangman-V1/master/Hangman-V1-TestWordsList.txt',function(response){
-            var returnWords = response.split("\n");
-            returnWords.forEach(function(element) {
-                console.log(element);
-            });
-            return returnWords;
-        });
-    });*/
-}
-
-// for some reason this prints undefined when i have !==, but doesn't print undefined when i have ===
-
-var a;
-if (a == undefined){
-    console.log(a);
 }
 
 
 console.log(wordList);
 
 function array(){
-    return ['a', 'b', 'c', 'd'];
+    return ['rest', 'beast', 'cat', 'dude'];
 }
 
 function printArr(arr){
