@@ -1,12 +1,20 @@
+window.addEventListener('keypress', function (e) {
+    if (e.keyCode === 13) {
+        guessWord();
+    }
+}, false);
+
 // initialize empty list called wordList
 var wordsList = ['wooooo'];
 var tester;
 
+// allows user to 
 function guessWord(){
     var text = document.getElementById('guessWord').value;
     console.log(text);
 }
 
+// main function
 window.onload = function main (){
     init();
     test = init();
@@ -17,7 +25,7 @@ window.onload = function main (){
 
 // Load the words from the dictionary text file to wordsList
 function init() {
-    console.log('hello from init im gonna kill JS I HATE JS');
+    console.log('from init O:<');
     // words in test file: test, testing, tester, tests
     var wordsFile = "https://raw.githubusercontent.com/tiffanyxho/Hangman-V1/master/Hangman-V1-TestWordsList.txt";
     //var wordList;
@@ -37,19 +45,9 @@ function init() {
     });*/
 }
 
-/*
-var wordsFile = "https://raw.githubusercontent.com/tiffanyxho/Hangman-V1/master/Hangman-V1-TestWordsList.txt";
-var wordList;
-$.get(wordsFile, function(data) {
-    wordList = data.split('\n');
-    wordList.forEach(function(element){
-        console.log(element);
-    });
-    console.log(wordList);
-});
-
-
 // for some reason this prints undefined when i have !==, but doesn't print undefined when i have ===
+/*
 if (typeof (wordsList) === 'undefined'){
     console.log(wordList);
-}*/
+}
+*/
