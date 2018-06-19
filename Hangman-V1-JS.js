@@ -1,7 +1,17 @@
 // checks when user pushes enter key
-window.addEventListener('keypress', function (e) {
+var checkEnter = window.addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
-        guessWord();
+        userWordGuessed = guessWord();
+    }
+}, false);
+
+window.addEventListener('checkEnter', function (  ) {
+    var guessRight = checkGuess('test', userWordGuessed);
+
+    if (guessRight){
+        console.log('you win!');
+    }else{
+        console.log('try again');
     }
 }, false);
 
@@ -13,6 +23,7 @@ var tester;
 function guessWord(){
     var text = document.getElementById('guessWord').value;
     console.log(text);
+    return text;
 }
 
 // main function - TEST #1
@@ -37,10 +48,12 @@ window.onload = function main(){
     // separate words in wordList into strings and store in array using split
     $.get(wordsFile, function(data) {
         wordList = data.split('\n');
-        
+
         wordList.forEach(function(element) {
             console.log(element);
         });
+
+        
     });
 }
 
