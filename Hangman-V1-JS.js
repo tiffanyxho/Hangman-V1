@@ -1,3 +1,4 @@
+// checks when user pushes enter key
 window.addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
         guessWord();
@@ -8,19 +9,49 @@ window.addEventListener('keypress', function (e) {
 var wordsList = ['wooooo'];
 var tester;
 
-// allows user to 
+// allows user to guess a word in input box and logs the word guessed into console
 function guessWord(){
     var text = document.getElementById('guessWord').value;
     console.log(text);
 }
 
-// main function
+// main function - TEST #1
+/*
 window.onload = function main (){
     init();
     test = init();
     console.log(wordsList);
     tester = init();
     console.log(tester);
+}
+*/
+
+// main function - TEST #2
+window.onload = function main(){
+    // store text file with list of words in wordsFile
+    var wordsFile = "https://raw.githubusercontent.com/tiffanyxho/Hangman-V1/master/Hangman-V1-TestWordsList.txt";
+    
+    // variable wordList will store list of words from wordsFile
+    var wordList;
+
+    // separate words in wordList into strings and store in array using split
+    $.get(wordsFile, function(data) {
+        wordList = data.split('\n');
+        
+        wordList.forEach(function(element) {
+            console.log(element);
+        });
+    });
+}
+
+function checkGuess(randomWord, userGuess){
+    if (randomWord === userGuess){
+        console.log("RIGHT!!");
+        return true;
+    }else{
+        console.log("WRONG!!");
+        return false;
+    }
 }
 
 // Load the words from the dictionary text file to wordsList
