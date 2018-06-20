@@ -10,20 +10,37 @@ var checkEnter = window.addEventListener('keypress', function (e) {
         // set user guess using guessWord function
         var userWordGuessed = guessWord();
 
+        randWord = newWord(wordsList);
+        console.log(randWord);
+
         // checks if user's word guessed is equal to random word using checkGuess function
         var guessRight = checkGuess(randWord, userWordGuessed);
+        if (guessRight){
+            removeWordFromList(wordsList);
+        }
     }
 }, false);
 
 
 // initialize wordList to list of words returned by array;
 var wordsList = newArr();
+let randWord = '';
+let randNum;
 
-// generate a random number between 0 and the length of wordsList to get a random word in the array
-let randNum = Math.floor(Math.random() * wordsList.length);
-let randWord = wordsList[randNum];
-// print random key word to guess
-console.log('The key word is ' + randWord);
+
+function newWord(list){
+    // generate a random number between 0 and the length of wordsList to get a random word in the array
+    randNum = Math.floor(Math.random() * list.length);
+    let randomWord = list[randNum];
+    
+    // print random key word to guess
+    console.log('The key word is ' + randomWord);
+    return randomWord;
+}
+
+function removeWordFromList(list){
+    list.splice(randNum, 1);
+}
 
 // allows user to guess a word in input box and logs the word guessed into console
 function guessWord(){
