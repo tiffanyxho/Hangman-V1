@@ -5,13 +5,16 @@ var checkEnter = window.addEventListener('keypress', function (e) {
         var userWordGuessed = guessWord();
 
         // checks if user's word guessed is equal to random word using checkGuess function
-        var guessRight = checkGuess('test', userWordGuessed);
+        var guessRight = checkGuess(randWord, userWordGuessed);
     }
 }, false);
 
 
-// initialize empty list called wordList
-var wordsList = ['wooooo'];
+// initialize wordList to list of words returned by array;
+var wordsList = newArr();
+let randNum = Math.floor(Math.random() * wordsList.length);
+var randWord = wordsList[randNum];
+console.log('The key word is ' + randWord);
 
 // allows user to guess a word in input box and logs the word guessed into console
 function guessWord(){
@@ -19,7 +22,6 @@ function guessWord(){
     console.log(text);
     return text;
 }
-
 
 // main function - TEST #2
 /*window.onload = function main(){
@@ -53,13 +55,15 @@ window.onload = function init() {
         //var wordList = data.split('\n');
         wordList = data.split('\n');
         //return wordList;
+        
     });
+    console.log(wordList);
+    if (wordList.length === 0){
+        console.log('im empty');
+    }
 }
 
-
-console.log(wordList);
-
-function array(){
+function newArr(){
     return ['rest', 'beast', 'cat', 'dude'];
 }
 
