@@ -4,30 +4,36 @@
 // AFTER: ALLOW USER TO GUESS MULTIPLE LETTERS AT A TIME - COUNTS AS ONLY 1 "ERROR"
 // DECIDE ON A SCORING SYSTEM (HOW DOES THE PLAYER LOSE?)
 
+// declare/initialize global variables
+let wordsList = newArr();
+let randWord = '';
+let randNum;
+
 // checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
 var checkEnter = window.addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
         // set user guess using guessWord function
         var userWordGuessed = guessWord();
 
-        randWord = newWord(wordsList);
-        console.log(randWord);
-
-        // checks if user's word guessed is equal to random word using checkGuess function
-        var guessRight = checkGuess(randWord, userWordGuessed);
-        if (guessRight){
-            removeWordFromList(wordsList);
+        if (wordsList.length > 0){
+            // chooses a new word in the wordsList to be guessed
+            randWord = newWord(wordsList);
+        
+            // checks if user's word guessed is equal to random word using checkGuess function
+            var guessRight = checkGuess(randWord, userWordGuessed);
+            // removes word from wordsList if player guessed correctly
+            if (guessRight){
+                removeWordFromList(wordsList);
+            }
         }
+        if (wordsList.length == 0){
+            console.log ("Congrats! You won :)")
+        }
+        
     }
 }, false);
 
-
-// initialize wordList to list of words returned by array;
-var wordsList = newArr();
-let randWord = '';
-let randNum;
-
-
+// chooses a new word in the wordsList array to be guessed
 function newWord(list){
     // generate a random number between 0 and the length of wordsList to get a random word in the array
     randNum = Math.floor(Math.random() * list.length);
