@@ -1,3 +1,9 @@
+// NEXT TODO: GET THE KEYWORD OUT OF THE ARR & GENERATE A NEW KEY WORD
+// AFTER: INCREMENT SCORE
+// AFTER: ALLOW USER TO GUESS 1 LETTER AT A TIME
+// AFTER: ALLOW USER TO GUESS MULTIPLE LETTERS AT A TIME - COUNTS AS ONLY 1 "ERROR"
+// DECIDE ON A SCORING SYSTEM (HOW DOES THE PLAYER LOSE?)
+
 // checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
 var checkEnter = window.addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
@@ -12,8 +18,11 @@ var checkEnter = window.addEventListener('keypress', function (e) {
 
 // initialize wordList to list of words returned by array;
 var wordsList = newArr();
+
+// generate a random number between 0 and the length of wordsList to get a random word in the array
 let randNum = Math.floor(Math.random() * wordsList.length);
-var randWord = wordsList[randNum];
+let randWord = wordsList[randNum];
+// print random key word to guess
 console.log('The key word is ' + randWord);
 
 // allows user to guess a word in input box and logs the word guessed into console
