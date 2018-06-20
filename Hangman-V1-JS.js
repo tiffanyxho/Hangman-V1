@@ -11,6 +11,7 @@ let correctGuesses = 0;
 
 // checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
 var checkEnter = window.addEventListener('keypress', function (e) {
+    console.log(e.key);
     if (e.keyCode === 13) {
         // set user guess using guessWord function
         var userWordGuessed = guessWord();
