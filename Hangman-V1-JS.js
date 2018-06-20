@@ -1,4 +1,3 @@
-// NEXT TODO: GET THE KEYWORD OUT OF THE ARR & GENERATE A NEW KEY WORD
 // AFTER: INCREMENT SCORE
 // AFTER: ALLOW USER TO GUESS 1 LETTER AT A TIME
 // AFTER: ALLOW USER TO GUESS MULTIPLE LETTERS AT A TIME - COUNTS AS ONLY 1 "ERROR"
@@ -8,6 +7,7 @@
 let wordsList = newArr();
 let randWord = '';
 let randNum;
+let correctGuesses = 0;
 
 // checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
 var checkEnter = window.addEventListener('keypress', function (e) {
@@ -24,12 +24,14 @@ var checkEnter = window.addEventListener('keypress', function (e) {
             // removes word from wordsList if player guessed correctly
             if (guessRight){
                 removeWordFromList(wordsList);
+                correctGuesses++;
+                document.getElementById('score').innerHTML = 'Score: ' + correctGuesses;
             }
         }
+        // victory message
         if (wordsList.length == 0){
             console.log ("Congrats! You won :)")
         }
-        
     }
 }, false);
 
@@ -77,6 +79,7 @@ function checkGuess(randomWord, userGuess){
     }
 }
 
+/*
 var wordList = [];
 // Load the words from the dictionary text file to wordsList
 window.onload = function init() {
@@ -94,6 +97,7 @@ window.onload = function init() {
         console.log('im empty');
     }
 }
+*/
 
 function newArr(){
     return ['rest', 'beast', 'cat', 'dude'];
