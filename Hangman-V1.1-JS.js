@@ -9,19 +9,20 @@ let correctGuesses = 0;     // how many correct guesses (score)
 let guessesLeft = 10;       // how many guesses player has left
 randWord = newWord(wordsList);
 
+let partOfWord = '';
+for (let i = 0; i < randWord.length; i++){
+    partOfWord += '_';
+}
+
 // checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
 var checkEnter = window.addEventListener('keypress', function (e) {
     //randWord = newWord(wordsList);
     console.log(e.key);
 
     if (randWord.includes(e.key)){
-        console.log(true);
-        let partOfWord = '';
         for (let i = 0; i < randWord.length; i++){
-            if (randWord.charAt(i) === e.key){
-                partOfWord += e.key;
-            }else{
-                partOfWord += '_';
+            if (randWord.charAt(i) == e.key){
+                partOfWord = setCharAt(partOfWord, i, e.key);
             }
         }
         console.log(partOfWord);
@@ -50,6 +51,12 @@ var checkEnter = window.addEventListener('keypress', function (e) {
         }
     }
 }, false);
+
+// changes a character in given str at index to a new char, chr
+function setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substr(0,index) + chr + str.substr(index+1);
+}
 
 // chooses a new word in the wordsList array to be guessed
 function newWord(list){
