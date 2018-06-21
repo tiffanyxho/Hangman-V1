@@ -1,16 +1,32 @@
 // AFTER: ALLOW USER TO GUESS 1 LETTER AT A TIME
 // DECIDE ON A SCORING SYSTEM (HOW DOES THE PLAYER LOSE?)
 
-
 // declare/initialize global variables
-let wordsList = newArr();
-let randWord = '';
-let randNum;
-let correctGuesses = 0;
-let guessesLeft = 10;
+let wordsList = newArr();   // list of possible words to be guessed
+let randWord = '';  // word to be guessed
+let randNum;        // random number generated to get random word in list
+let correctGuesses = 0;     // how many correct guesses (score)
+let guessesLeft = 10;       // how many guesses player has left
+randWord = newWord(wordsList);
 
 // checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
 var checkEnter = window.addEventListener('keypress', function (e) {
+    //randWord = newWord(wordsList);
+    console.log(e.key);
+
+    if (randWord.includes(e.key)){
+        console.log(true);
+        let partOfWord = '';
+        for (let i = 0; i < randWord.length; i++){
+            if (randWord.charAt(i) === e.key){
+                partOfWord += e.key;
+            }else{
+                partOfWord += '_';
+            }
+        }
+        console.log(partOfWord);
+    }
+    
     if (e.keyCode === 13) {
         // set user guess using guessWord function
         var userWordGuessed = guessWord();
