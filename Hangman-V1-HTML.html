@@ -12,10 +12,12 @@
         
         <!-- gameboard has input box that user can use to guess word & button to confirm user guess -->
         <div id = "gameboard">
-            <p>Instructions: input your guess in the box below and press enter when you are confident in your guess! :)</p>
+            <h2>Instructions</h2>
+            <h3>Input your guess in the box below and press enter when you are confident in your guess! :)</h3>
             <p id="score">Score: 0</p>
             <input type="text" id="guessWord"/>
             <button type="button" onclick="guessWord()">Press enter to guess!</button>
+            <p id="wordToGuess"></p>
         </div>
 
         <!-- tell which JS file to reference & allow use of jQuery -->

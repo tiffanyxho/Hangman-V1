@@ -13,6 +13,7 @@ let partOfWord = '';
 for (let i = 0; i < randWord.length; i++){
     partOfWord += '_';
 }
+document.getElementById("wordToGuess").innerHTML = partOfWord;
 
 // checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
 var checkEnter = window.addEventListener('keypress', function (e) {
@@ -26,6 +27,7 @@ var checkEnter = window.addEventListener('keypress', function (e) {
             }
         }
         console.log(partOfWord);
+        document.getElementById("wordToGuess").innerHTML = partOfWord;
     }
     
     if (e.keyCode === 13) {
