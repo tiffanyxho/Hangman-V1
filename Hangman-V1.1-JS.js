@@ -7,6 +7,7 @@ let randWord = '';  // word to be guessed
 let randNum;        // random number generated to get random word in list
 let correctGuesses = 0;     // how many correct guesses (score)
 let guessesLeft = 10;       // how many guesses player has left
+let notInWord = "";
 randWord = newWord(wordsList);
 
 let partOfWord = '';
@@ -15,43 +16,56 @@ for (let i = 0; i < randWord.length; i++){
 }
 document.getElementById("wordToGuess").innerHTML = partOfWord;
 
-// checks when user pushes enter key & also checks if you guessed the right word, displays whether you got right word or not
-var checkEnter = window.addEventListener('keypress', function (e) {
-    //randWord = newWord(wordsList);
+// checks when user pushes a key
+window.addEventListener('keypress', function (e) {
+    // used to see if letter is in word
+    let letterInWord = false;
+
+    // log key pressed
     console.log(e.key);
 
+    /* checks if key pressed is in the word, if it is change underscores where letter is in word to the letter & 
+    change letterInWord boolean to true*/
     if (randWord.includes(e.key)){
         for (let i = 0; i < randWord.length; i++){
             if (randWord.charAt(i) == e.key){
                 partOfWord = setCharAt(partOfWord, i, e.key);
+                letterInWord = true;
             }
         }
         console.log(partOfWord);
         document.getElementById("wordToGuess").innerHTML = partOfWord;
     }
-    
-    if (e.keyCode === 13) {
-        // set user guess using guessWord function
-        var userWordGuessed = guessWord();
 
-        if (wordsList.length > 0){
-            // chooses a new word in the wordsList to be guessed
-            randWord = newWord(wordsList);
-        
-            // checks if user's word guessed is equal to random word using checkGuess function
-            var guessRight = checkGuess(randWord, userWordGuessed);
-            // removes word from wordsList if player guessed correctly
-            if (guessRight){
-                removeWordFromList(wordsList);
-                correctGuesses++;
-                document.getElementById('score').innerHTML = 'Score: ' + correctGuesses;
-            }
-        }
-        // victory message
-        if (wordsList.length == 0){
-            console.log ("Congrats! You won :)")
+    // 
+    if (letterInWord === false && !notInWord.includes(e.key)){
+        notInWord += e.key + " ";
+        guessesLeft--;
+    }
+    document.getElementById("lettersNotInWord").innerHTML = notInWord;
+    
+    
+    // set user guess using guessWord function
+    var userWordGuessed = guessWord();
+
+    if (wordsList.length > 0){
+        // chooses a new word in the wordsList to be guessed
+        randWord = newWord(wordsList);
+    
+        // checks if user's word guessed is equal to random word using checkGuess function
+        var guessRight = checkGuess(randWord, userWordGuessed);
+        // removes word from wordsList if player guessed correctly
+        if (guessRight){
+            removeWordFromList(wordsList);
+            correctGuesses++;
+            document.getElementById('score').innerHTML = 'Score: ' + correctGuesses;
         }
     }
+    // victory message
+    if (wordsList.length == 0){
+        console.log ("Congrats! You passed the first round :)")
+    }
+    
 }, false);
 
 // changes a character in given str at index to a new char, chr
