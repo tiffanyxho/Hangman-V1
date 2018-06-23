@@ -37,7 +37,8 @@ window.addEventListener('keypress', function (e) {
         document.getElementById("wordToGuess").innerHTML = partOfWord;
     }
 
-    // 
+    // checks if letter guessed is in the word or if the letter has already been guessed, if both are true, then do nothing
+    // otherwise, add the incorrectly guessed letter to the list of incorrect letters
     if (letterInWord === false && !notInWord.includes(e.key)){
         notInWord += e.key + " ";
         guessesLeft--;
