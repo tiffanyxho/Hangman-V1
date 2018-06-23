@@ -6,3 +6,8 @@ h3{
     font-size: 32px;
     letter-spacing: 5px;
 }
+
+#endText{
+    font-size: 48px;
+    text-align: center;
+}

@@ -13,12 +13,16 @@
         <!-- gameboard has input box that user can use to guess word & button to confirm user guess -->
         <div id = "gameboard">
             <h2>Instructions</h2>
-            <h3>Input your guess in the box below and press enter when you are confident in your guess! :)</h3>
+            <h3>Press the keys of the letters you want to guess!  The letters you have guessed will display below the word's lines.</h3>
             <p id="score">Score: 0</p>
             <input type="text" id="guessWord"/>
             <button type="button" onclick="guessWord()">Press enter to guess!</button>
             <p id="wordToGuess"></p>
             <p id="lettersNotInWord"></p>
+        </div>
+
+        <div id="endScreen">
+            <p id="endText"></p>
         </div>
 
         <!-- tell which JS file to reference & allow use of jQuery -->

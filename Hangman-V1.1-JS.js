@@ -43,31 +43,38 @@ window.addEventListener('keypress', function (e) {
         notInWord += e.key + " ";
         guessesLeft--;
     }
-    document.getElementById("lettersNotInWord").innerHTML = notInWord;
-    
-    
-    // set user guess using guessWord function
-    var userWordGuessed = guessWord();
 
-    if (wordsList.length > 0){
-        // chooses a new word in the wordsList to be guessed
-        randWord = newWord(wordsList);
-    
-        // checks if user's word guessed is equal to random word using checkGuess function
-        var guessRight = checkGuess(randWord, userWordGuessed);
-        // removes word from wordsList if player guessed correctly
-        if (guessRight){
-            removeWordFromList(wordsList);
-            correctGuesses++;
-            document.getElementById('score').innerHTML = 'Score: ' + correctGuesses;
+    // if the player guesses all letters correctly, then...
+    if (!partOfWord.includes("_")){
+        console.log("You guessed it! The word is " + randWord + "!");
+        
+        correctGuesses++;   // increment score
+        removeWordFromList(wordsList);  // remove word guessed
+        
+        // check if all words have been guessed yet
+        if (wordsList.length == 0){
+            document.getElementById("endText").innerHTML = "Congrats! You passed the first round :)";   // victory message
+        }else{
+            randWord = newWord(wordsList);  // get new word
+            partOfWord = replaceWithUnderscores(randWord);    // replaces all characters in partOfWord to underscores with length of the new randWord
+            document.getElementById("wordToGuess").innerHTML = partOfWord;  // changes HTML to new word
+            notInWord = "";     // reset the incorrect letters guessed to none
         }
     }
-    // victory message
-    if (wordsList.length == 0){
-        console.log ("Congrats! You passed the first round :)")
-    }
-    
+
+    // set HTML to update score & incorrect letters guessed by player
+    document.getElementById('score').innerHTML = 'Score: ' + correctGuesses;
+    document.getElementById("lettersNotInWord").innerHTML = notInWord;
 }, false);
+
+// returns a string with underscores, the number of underscores is the length of word
+function replaceWithUnderscores(word){
+    var newWord = "";
+    for (let i = 0; i < word.length; i++){
+        newWord += "_";
+    }
+    return newWord;
+}
 
 // changes a character in given str at index to a new char, chr
 function setCharAt(str,index,chr) {
@@ -75,7 +82,7 @@ function setCharAt(str,index,chr) {
     return str.substr(0,index) + chr + str.substr(index+1);
 }
 
-// chooses a new word in the wordsList array to be guessed
+// randomly generates number between 0 and list.length-1 and returns the word at the index of random number in list
 function newWord(list){
     // generate a random number between 0 and the length of wordsList to get a random word in the array
     randNum = Math.floor(Math.random() * list.length);
