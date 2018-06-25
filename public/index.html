@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-      <title>Hangman V1</title>
+        <link rel = "stylesheet" href = "../Hangman-V1-CSS.css" type = "text/css">
+        <title>Hangman V1</title>
 
-      <!-- Firebase App is always required and must be first -->
-      <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
 
-      <!-- Add additional services that you want to use -->
-      <!-- Comment out (or don't include) services that you don't want to use -->
-      <!--
-      <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script>
-      -->
-      <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-storage.js"></script>
+        <!-- Add additional services that you want to use -->
+        <!-- Comment out (or don't include) services that you don't want to use -->
+        <!--<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-functions.js"></script>-->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-storage.js"></script>
 
-      <!-- firebase code -->
-      <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
-      <script>
-      // Initialize Firebase
-      var config = {
-          apiKey: "AIzaSyBXkpEQQngvZE1c_MWLfvJ6PHsXt2g3HAU",
-          authDomain: "firsthangman-7f33a.firebaseapp.com",
-          databaseURL: "https://firsthangman-7f33a.firebaseio.com",
-          projectId: "firsthangman-7f33a",
-          storageBucket: "firsthangman-7f33a.appspot.com",
-          messagingSenderId: "602690236972"
-      };
-      firebase.initializeApp(config);
-      </script>
 
-      <link rel = "stylesheet" href = "../Hangman-V1-CSS.css" type = "text/css">
+        <!-- firebase code -->
+        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBXkpEQQngvZE1c_MWLfvJ6PHsXt2g3HAU",
+            authDomain: "firsthangman-7f33a.firebaseapp.com",
+            databaseURL: "https://firsthangman-7f33a.firebaseio.com",
+            projectId: "firsthangman-7f33a",
+            storageBucket: "firsthangman-7f33a.appspot.com",
+            messagingSenderId: "602690236972"
+        };
+        firebase.initializeApp(config);
+        </script>
     </head>
 
     <body>
@@ -52,14 +50,14 @@
         </div>
 
         <div id="endScreen">
-            <p id="endText"></p>
+            <p id="endText">hihi</p>
         </div>
 
         <!-- tell which JS file to reference & allow use of jQuery -->
         <!--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>-->
-
-        <!-- tell which JS file to refer to -->
         <script type = "text/javascript" src = "../Hangman-V1.1-JS.js"></script>
     </body>
+
 </html>
+
 <!-- idea for hangman later versions - have a car meter / how much gas & then powerups: can refill gas, or make car more gas efficient & get more "turns" -->
