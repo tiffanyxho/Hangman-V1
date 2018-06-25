@@ -9,12 +9,15 @@
     <body>
         <div id="title">
             <h1>Hangman</h1>
-            <p>Right arrow: <i class="arrow_right"></i></p>
+            <!--<a href="#" class="next round">&#8250;</a> a tag is for hyperlinks to other pages -->
+            <button class="right_button"><i class="arrow_right"></i></button>  <!--   just an arrow - doesn't do anything -->
         </div>
         
         <div id="instructions">
             <h2>Instructions</h2>
             <h3>Press the keys of the letters you want to guess!  The letters you have guessed will display below the word's lines.</h3>
+            <!--<a href="#" class="previous round">&#8249;</a>
+            <a href="#" class="next round">&#8250;</a>-->
         </div>
 
         <!-- gameboard has input box that user can use to guess word & button to confirm user guess -->
@@ -23,10 +26,11 @@
             <p id="score">Score: 0</p>
             <p id="wordToGuess"></p>
             <p id="lettersNotInWord"></p>
-            <p>Right arrow: <i class="arrow_right"></i></p>
-            <p>Left arrow: <i class="arrow_left"></i></p>
+            <button class="left_button"><i class="arrow_left"></i></button>
+            <button class="right_button"><i class="arrow_right"></i></button>
         </div>
 
+        <!-- end game text displays in p tag - text depends on whether player wins/loses -->
         <div id="endScreen">
             <p id="endText"></p>
         </div>
