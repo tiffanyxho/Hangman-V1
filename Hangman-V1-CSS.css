@@ -1,12 +1,21 @@
+/* Unbold h3s (instruction text) */
 h3{
     font-weight: normal;
 }
 
+/* Align score to right side of screen & give right-padding so it's not too far right */
+#score{
+    text-align: right;
+    padding-right: 1%;
+}
+
+/* Increase font size of letters guessed/underscores & add spacing in between each letter so number of underscores is visible */
 #wordToGuess{
     font-size: 32px;
     letter-spacing: 5px;
 }
 
+/* Increase font size of end game text & center it  */
 #endText{
     font-size: 48px;
     text-align: center;
