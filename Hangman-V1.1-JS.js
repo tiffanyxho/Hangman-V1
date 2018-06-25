@@ -2,27 +2,25 @@
 // DECIDE ON A SCORING SYSTEM (HOW DOES THE PLAYER LOSE?)
 
 // declare/initialize global variables
-let wordsList = newArr();   // list of possible words to be guessed
-let randWord = '';  // word to be guessed
-let randNum;        // random number generated to get random word in list
+let wordsList = easyWordsArr();   // list of possible words to be guessed
+let randWord = '';      // word to be guessed
+let randNum;            // random number generated to get random word in list
 let correctGuesses = 0;     // how many correct guesses (score)
 let guessesLeft = 10;       // how many guesses player has left
-let notInWord = "";
+let notInWord = "";         // used to show users incorrect guesses
 randWord = newWord(wordsList);
 
+// sets partOfWord to have the same number of underscores as the word to be guessed (randWord)
 let partOfWord = '';
 for (let i = 0; i < randWord.length; i++){
     partOfWord += '_';
 }
 document.getElementById("wordToGuess").innerHTML = partOfWord;
 
-// checks when user pushes a key
-window.addEventListener('keypress', function (e) {
+// checks when user pushes a key, updateGame function is where all the actions of the game occurs
+window.addEventListener("keypress", function updateGame (e) {
     // used to see if letter is in word
     let letterInWord = false;
-
-    // log key pressed
-    console.log(e.key);
 
     /* checks if key pressed is in the word, if it is change underscores where letter is in word to the letter & 
     change letterInWord boolean to true*/
@@ -30,9 +28,9 @@ window.addEventListener('keypress', function (e) {
         for (let i = 0; i < randWord.length; i++){
             if (randWord.charAt(i) == e.key){
                 partOfWord = setCharAt(partOfWord, i, e.key);
-                letterInWord = true;
             }
         }
+        letterInWord = true;
         console.log(partOfWord);
         document.getElementById("wordToGuess").innerHTML = partOfWord;
     }
@@ -44,6 +42,13 @@ window.addEventListener('keypress', function (e) {
         guessesLeft--;
     }
 
+    // Stop event listener for keypress if there are no more guesses
+    if (guessesLeft === 0) {
+        console.log("you have no more guesses :(");
+        document.getElementById("endText").innerHTML = "You have no more guesses :(";
+        window.removeEventListener("keypress", updateGame);
+    }
+    
     // if the player guesses all letters correctly, then...
     if (!partOfWord.includes("_")){
         console.log("You guessed it! The word is " + randWord + "!");
@@ -93,6 +98,7 @@ function newWord(list){
     return randomWord;
 }
 
+// Removes the word at randNum in array list --> should probably change to have a parameter called index for index position of word
 function removeWordFromList(list){
     list.splice(randNum, 1);
 }
@@ -115,10 +121,12 @@ function checkGuess(randomWord, userGuess){
     }
 }
 
-function newArr(){
+// Array of easy words to guess
+function easyWordsArr(){
     return ['rest', 'beast', 'cat', 'dude'];
 }
 
+// Prints each element in arr
 function printArr(arr){
     arr.forEach(function(string){
         console.log(string);
