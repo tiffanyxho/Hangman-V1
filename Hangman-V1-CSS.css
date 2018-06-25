@@ -6,7 +6,24 @@
     background-size: 500px 500px;
 }
 
-/* Unbold h3s (instruction text) */
+i{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.arrow_right{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.arrow_left{
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+/* Unbold h3s (affects instruction's explanation text) */
 h3{
     font-weight: normal;
 }
