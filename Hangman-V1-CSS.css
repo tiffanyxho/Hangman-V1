@@ -1,3 +1,11 @@
+/* set title height and width */
+#title{
+    height: 500px;
+    width: 500px;
+    background-image: url("https://i.gyazo.com/1b877c9a0f5b42cfb820a22c6132a4db.png");  /* image doesn't load when using /images/hang_title_pic.jpg path */
+    background-size: 500px 500px;
+}
+
 /* Unbold h3s (instruction text) */
 h3{
     font-weight: normal;
