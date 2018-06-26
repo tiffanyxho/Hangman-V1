@@ -2,9 +2,10 @@
  * Put title/background img in & centered it
 */
 #title{
-    height: 500px;
-    width: 100vw;
+    height: 44vw;
+    width: 99vw;
     text-align: center;
+    font-size: 36px;
     background-image: url("https://i.gyazo.com/1b877c9a0f5b42cfb820a22c6132a4db.png");  /* image doesn't load when using /images/hang_title_pic.jpg path */
     background-repeat: no-repeat;
     background-size: 500px 500px;
