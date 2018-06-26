@@ -33,6 +33,7 @@ document.getElementById("insToGame").addEventListener("click", function(){
 document.getElementById("insToTitle").addEventListener("click", function(){
     document.getElementById("instructions").style.display = "none";
     document.getElementById("title").style.display = "initial";
+
 });
 
 // checks when user pushes a key, updateGame function is where all the actions of the game occurs
