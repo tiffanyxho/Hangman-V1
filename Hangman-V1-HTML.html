@@ -10,12 +10,14 @@
         <div id="title">
             <h1>Hangman</h1>
             <!--<a href="#" class="next round">&#8250;</a> a tag is for hyperlinks to other pages -->
-            <button class="right_button"><i class="arrow_right"></i></button>  <!--   just an arrow - doesn't do anything -->
+            <button class="right_button" id="titleToIns"><i class="arrow_right"></i></button>  <!-- just an arrow - doesn't do anything -->
         </div>
         
         <div id="instructions">
             <h2>Instructions</h2>
             <h3>Press the keys of the letters you want to guess!  The letters you have guessed will display below the word's lines.</h3>
+            <button class="left_button" id="insToTitle"><i class="arrow_left"></i></button>
+            <button class="right_button" id="insToGame"><i class="arrow_right"></i></button>
             <!--<a href="#" class="previous round">&#8249;</a>
             <a href="#" class="next round">&#8250;</a>-->
         </div>
@@ -26,8 +28,6 @@
             <p id="score">Score: 0</p>
             <p id="wordToGuess"></p>
             <p id="lettersNotInWord"></p>
-            <button class="left_button"><i class="arrow_left"></i></button>
-            <button class="right_button"><i class="arrow_right"></i></button>
         </div>
 
         <!-- end game text displays in p tag - text depends on whether player wins/loses -->
