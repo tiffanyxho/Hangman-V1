@@ -32,8 +32,7 @@ document.getElementById("insToGame").addEventListener("click", function(){
 // When left arrow pressed on instructions screen, changes from instructions to title
 document.getElementById("insToTitle").addEventListener("click", function(){
     document.getElementById("instructions").style.display = "none";
-    document.getElementById("title").style.display = "initial";
-
+    document.getElementById("title").style.display = "inherit";
 });
 
 // checks when user pushes a key, updateGame function is where all the actions of the game occurs
