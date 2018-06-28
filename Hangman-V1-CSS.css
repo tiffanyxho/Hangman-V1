@@ -1,17 +1,22 @@
+/* for title & instructions title: center text, 102px font, some top margin space, font Markazi Text */
+h1{
+    text-align: center;
+    font-size: 102px;
+    font-family: 'Markazi Text', serif;
+    margin-top: 60px;
+}
+
 /* Set title height and width & align title to center
  * Put title/background img in & centered it
-*/
+ */
 #title{
     height: 44vw;
     width: 99vw;
-    text-align: center;
-    font-size: 64px;
-    font-family: 'Markazi Text', serif;
     background-image: url("https://i.gyazo.com/1b877c9a0f5b42cfb820a22c6132a4db.png");  /* image doesn't load when using /images/hang_title_pic.jpg path */
     background-repeat: no-repeat;
     background-size: 540px 540px;
-    background-position: center 90%;
-    margin-top: -50px;
+    background-position: center 68%;
+    /*margin-top: -50px;*/
 }
 
 /* Makes solid lines/thickness of arrows */
@@ -48,13 +53,15 @@ i{
     bottom: 15%;
 }
 
-h2{
-    
-}
-
-/* Unbold h3s (affects instruction's explanation text) */
+/* Unbold h3s (affects instruction's explanation text), change font to Markazi, lighter than normal font-weight, 
+   more right and left margin space, center text, this is the instructions text */
 h3{
-    font-weight: normal;
+    font-family: 'Markazi Text', serif;
+    font-weight: 300;
+    font-size: 44px;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 /* Align score to right side of screen & give right-padding so it's not too far right */
