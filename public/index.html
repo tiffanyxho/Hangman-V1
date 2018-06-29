@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <link rel = "stylesheet" href = "style.css" type = "text/css">
+        <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hangman V1</title>
+    </head>
+
+    <body>
+        <div id="title">
+            <h1>Hangman</h1>
+            <!--<a href="#" class="next round">&#8250;</a> a tag is for hyperlinks to other pages -->
+            <button class="right_button" id="titleToIns"><i class="arrow_right"></i></button>  <!-- just an arrow - doesn't do anything -->
+        </div>
+        
+        <div id="instructions">
+            <h1>Instructions</h2>
+            <h3>Press the keys of the letters you want to guess!  The letters you have guessed will display below the word's lines.</h3>
+            <button class="left_button" id="insToTitle"><i class="arrow_left"></i></button>
+            <button class="right_button" id="insToGame"><i class="arrow_right"></i></button>
+            <!--<a href="#" class="previous round">&#8249;</a>
+            <a href="#" class="next round">&#8250;</a>-->
+        </div>
+
+        <!-- gameboard has input box that user can use to guess word & button to confirm user guess -->
+        <div id="gameboard">
+            <p id="guessesLeft">Guesses Left: 10</p>
+            <p id="score">Score: 0</p>
+            <br>
+            <p id="wordToGuess"></p>
+            <p id="lettersNotInWord"></p>
+            <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+        </div>
+
+        <!-- end game text displays in p tag - text depends on whether player wins/loses -->
+        <div id="endScreen">
+            <p id="endText"></p>
+        </div>
+
+        <!-- tell which JS file to reference & allow use of jQuery -->
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type = "text/javascript" src = "main.js"></script>
+    </body>
+</html>
+<!-- idea for hangman later versions - have a car meter / how much gas & then powerups: can refill gas, or make car more gas efficient & get more "turns" -->
