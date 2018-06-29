@@ -146,10 +146,3 @@ function checkGuess(randomWord, userGuess){
 function easyWordsArr(){
     return ['rest', 'beast', 'cat', 'dude'];
 }
-
-// Prints each element in arr
-function printArr(arr){
-    arr.forEach(function(string){
-        console.log(string);
-    });
-}
