@@ -58,7 +58,7 @@ window.addEventListener("keypress", function updateGame (e) {
     if (letterInWord === false && !notInWord.includes(e.key)){
         notInWord += e.key + " ";
         guessesLeft--;
-        animate();
+        //animate();
     }
 
     // Stop event listener for keypress if there are no more guesses
@@ -130,6 +130,7 @@ function easyWordsArr(){
     return ['rest', 'beast', 'cat', 'dude'];
 }
 
+/*
 // Animate man
 var animate = function () {
     var drawMe = guessesLeft ;
@@ -197,3 +198,4 @@ leftLeg = function() {
 };
 
 drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
+*/
