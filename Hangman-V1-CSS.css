@@ -1,8 +1,12 @@
-/* for title & instructions title: center text, 102px font, some top margin space, font Markazi Text */
+/* font Markazi Text for all text */ 
+body{
+    font-family: 'Markazi Text', serif;
+}
+
+/* for title & instructions title: center text, 102px font, some top margin space */
 h1{
     text-align: center;
     font-size: 102px;
-    font-family: 'Markazi Text', serif;
     margin-top: 60px;
 }
 
@@ -56,7 +60,6 @@ i{
 /* Unbold h3s (affects instruction's explanation text), change font to Markazi, lighter than normal font-weight, 
    more right and left margin space, center text, this is the instructions text */
 h3{
-    font-family: 'Markazi Text', serif;
     font-weight: 300;
     font-size: 44px;
     text-align: center;
@@ -64,17 +67,33 @@ h3{
     margin-left: 20px;
 }
 
+#gameboard{
+    font-size: 32px;
+}
+
+#guessesLeft{
+    float: left;
+}
+
 /* Align score to right side of screen & give right-padding so it's not too far right */
 #score{
-    text-align: right;
+    float: right;
     padding-right: 1%;
 }
 
 /* Increase font size of letters guessed/underscores & add spacing in between each letter so number of underscores is visible */
 #wordToGuess{
-    font-size: 32px;
-    letter-spacing: 5px;
+    letter-spacing: 10px;
     text-align: center;
+}
+
+#lettersNotInWord{
+    text-align: center;
+}
+
+#wordToGuess, #lettersNotInWord, #endText{
+    font-size: 80px;
+    font-weight: 100;
 }
 
 /* Increase font size of end game text & center it */

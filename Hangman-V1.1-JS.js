@@ -85,8 +85,11 @@ window.addEventListener("keypress", function updateGame (e) {
         }
     }
 
+    // display number of guesses that user has left
+    document.getElementById("guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+    
     // set HTML to update score & incorrect letters guessed by player
-    document.getElementById('score').innerHTML = 'Score: ' + correctGuesses;
+    document.getElementById("score").innerHTML = "Score: " + correctGuesses;
     document.getElementById("lettersNotInWord").innerHTML = notInWord;
 }, false);
 
