@@ -8,7 +8,10 @@ let randNum;            // random number generated to get random word in list
 let correctGuesses = 0;     // how many correct guesses (score)
 let guessesLeft = 10;       // how many guesses player has left
 let notInWord = "";         // used to show users incorrect guesses
-randWord = newWord(wordsList);
+let myHangMan;      // to be parts of hangman drawn when user guesses wrong
+let context;        // for canvas
+//let drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];  // in order to draw hangman, starting from last index
+randWord = newWord(wordsList);  // get new random work in wordsList
 
 // sets partOfWord to have the same number of underscores as the word to be guessed (randWord)
 let partOfWord = '';
@@ -37,12 +40,18 @@ document.getElementById("insToTitle").addEventListener("click", function(){
 
 // checks when user pushes a key, updateGame function is where all the actions of the game occurs
 window.addEventListener("keypress", function updateGame (e) {
-    // used to see if letter is in word
-    let letterInWord = false;
+    let letterInWord = false;   // used to see if letter is in word
+    let keyPressed = e.which || e.keyCode;  // set to number value of key pressed
+    let onGameBoard = false;    // true if on game screen, else false
+
+    // checks to make sure user is on the gameboard before counting letters inputted
+    if (document.getElementById("gameboard").style.display === "initial"){
+        onGameBoard = true;
+    }
 
     /* checks if key pressed is in the word, if it is change underscores where letter is in word to the letter & 
     change letterInWord boolean to true*/
-    if (randWord.includes(e.key)){
+    if (onGameBoard && randWord.includes(e.key)){
         for (let i = 0; i < randWord.length; i++){
             if (randWord.charAt(i) == e.key){
                 partOfWord = setCharAt(partOfWord, i, e.key);
@@ -55,10 +64,15 @@ window.addEventListener("keypress", function updateGame (e) {
 
     // checks if letter guessed is in the word or if the letter has already been guessed, if both are true, then do nothing
     // otherwise, add the incorrectly guessed letter to the list of incorrect letters
-    if (letterInWord === false && !notInWord.includes(e.key)){
-        notInWord += e.key + " ";
-        guessesLeft--;
-        //animate();
+    if (onGameBoard && letterInWord === false && !notInWord.includes(e.key)){
+        if (keyPressed >= 97 && keyPressed <= 122){
+            notInWord += e.key + " ";
+            guessesLeft--;
+            //animate();
+        }else{
+            console.log("only input alphabetical characters");
+        }
+        
     }
 
     // Stop event listener for keypress if there are no more guesses
@@ -131,10 +145,9 @@ function easyWordsArr(){
 }
 
 /*
-// Animate man
+// Animate man, draw until guessesLeft index
 var animate = function () {
-    var drawMe = guessesLeft ;
-    drawArray[drawMe]();
+    drawArray[guessesLeft]();
 }
 
 // Hangman
@@ -155,10 +168,9 @@ head = function(){
 }
 
 draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
-
-context.moveTo($pathFromx, $pathFromy);
-context.lineTo($pathTox, $pathToy);
-context.stroke(); 
+    context.moveTo($pathFromx, $pathFromy);
+    context.lineTo($pathTox, $pathToy);
+    context.stroke(); 
 }
 
 frame1 = function() {
@@ -196,6 +208,4 @@ rightLeg = function() {
 leftLeg = function() {
     draw (60, 70, 20, 100);
 };
-
-drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
 */
