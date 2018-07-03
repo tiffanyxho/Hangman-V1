@@ -10,20 +10,6 @@ h1{
     margin-top: 4%;
 }
 
-/* Set title height and width & align title to center
- * Put title/background img in & centered it
- */
-#title{
-    /*background-image: url("https://i.gyazo.com/1b877c9a0f5b42cfb820a22c6132a4db.png");  /* image doesn't load when using /images/hang_title_pic.jpg path */
-    /*background-repeat: no-repeat;
-    /*background-size: 540px 540px;*/
-    /*background-size: 50% 80%;
-    background-attachment: fixed;
-    background-position: 50% 68%;
-    background-position-y: 50%;
-    /*margin-top: -50px;*/
-}
-
 .title-img{
     height: 60vh;
     width: 30vw;
