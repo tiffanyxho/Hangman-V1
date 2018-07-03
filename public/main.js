@@ -153,7 +153,7 @@ function removeWordFromList(list){
 
 // Array of easy words to guess
 function easyWordsArr(){
-    return ['rest', 'beast', 'cat', 'dude'];
+    return ['rest', 'beast', 'sat', 'dude', 'mood', 'coat', 'food'];
 }
 
 setInterval(blinkingBtn, 500);

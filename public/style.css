@@ -6,7 +6,7 @@ body{
 /* for title & instructions title: center text, 102px font, some top margin space */
 h1{
     text-align: center;
-    font-size: 102px;
+    font-size: 124px;
     margin-top: 4%;
 }
 
@@ -26,13 +26,14 @@ h1{
 
 .title-img{
     height: 60vh;
-    width: 80vw;
-    border: 1px black solid;
+    width: 30vw;
+    margin: 0 auto;  
+    position: center;
     background-image: url("https://i.gyazo.com/1b877c9a0f5b42cfb820a22c6132a4db.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: 50% 50%;
-    background-size: 540px 540px;
+    background-position: 30vw 17vh;
+    background-size: 40% 80%;
 }
 
 /*#title-img{
@@ -55,16 +56,6 @@ i{
     border-width: 0 8px 8px 0;
     display: inline-block;
     padding: 15px;
-/*
-    animation-name: flash;
-	animation-duration: 1s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;*/
-}
-
-@keyframes flash{
-    50% {opacity: 0}
-    
 }
 
 /* orientes arrow to be right */
@@ -147,6 +138,6 @@ h3{
     text-align: center;
 }
 
-#instructions, #gameboard, #endtext, .title-img{
+#instructions, #gameboard, #endtext{
     display: none;
 }
