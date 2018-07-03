@@ -89,8 +89,13 @@ window.addEventListener("keypress", function updateGame (e) {
 
     // Stop event listener for keypress if there are no more guesses
     if (guessesLeft === 0) {
+        let myImg = document.getElementById("end-img");
         console.log("you have no more guesses :(");
         document.getElementById("endText").innerHTML = "You have no more guesses :(";
+        document.getElementById("endScreen").style.display = "initial";
+        myImg.src = "https://www.cambiumned.nl/wp-content/uploads/2015/03/galgje.gif";
+        myImg.style.height = '30%';
+        myImg.style.width = '30%';
         window.removeEventListener("keypress", updateGame);
     }
     
@@ -153,7 +158,7 @@ function removeWordFromList(list){
 
 // Array of easy words to guess
 function easyWordsArr(){
-    return ['rest', 'beast', 'sat', 'dude', 'mood', 'coat', 'food'];
+    return ['rest', 'beast', 'sat', 'dude', 'coat', 'food', 'mood', ''];
 }
 
 setInterval(blinkingBtn, 500);

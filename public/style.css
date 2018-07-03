@@ -116,6 +116,12 @@ h3{
     text-align: center;
 }
 
-#instructions, #gameboard, #endtext{
+#instructions, #gameboard, #endScreen{
     display: none;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
