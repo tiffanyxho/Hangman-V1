@@ -10,6 +10,7 @@ let guessesLeft = 10;       // how many guesses player has left
 let notInWord = "";         // used to show users incorrect guesses
 let myHangMan;      // to be parts of hangman drawn when user guesses wrong
 let context;        // for canvas
+let buttonBlack = true;
 //let drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];  // in order to draw hangman, starting from last index
 randWord = newWord(wordsList);  // get new random word in wordsList
 
@@ -19,6 +20,17 @@ for (let i = 0; i < randWord.length; i++){
     partOfWord += '_';
 }
 document.getElementById("wordToGuess").innerHTML = partOfWord;
+
+// makes button blink
+function blinkingBtn(){
+    let btns = document.getElementsByTagName("i");
+
+    if(btns[0].style.borderColor == "white"){
+        btns[0].style.borderColor = "black";
+    } else {
+        btns[0].style.borderColor = "white";
+    }
+}
 
 // When right arrow pressed on title screen, changes from title to instructions
 document.getElementById("titleToIns").addEventListener("click", function(){
@@ -143,6 +155,8 @@ function removeWordFromList(list){
 function easyWordsArr(){
     return ['rest', 'beast', 'cat', 'dude'];
 }
+
+setInterval(blinkingBtn, 500);
 
 /*
 // Animate man, draw until guessesLeft index

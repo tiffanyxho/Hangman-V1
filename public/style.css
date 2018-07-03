@@ -14,26 +14,34 @@ h1{
  * Put title/background img in & centered it
  */
 #title{
-    height: 44vw;
-    width: 99vw;
-    background-image: url("https://i.gyazo.com/1b877c9a0f5b42cfb820a22c6132a4db.png");  /* image doesn't load when using /images/hang_title_pic.jpg path */
-    background-repeat: no-repeat;
+    /*background-image: url("https://i.gyazo.com/1b877c9a0f5b42cfb820a22c6132a4db.png");  /* image doesn't load when using /images/hang_title_pic.jpg path */
+    /*background-repeat: no-repeat;
     /*background-size: 540px 540px;*/
-    background-size: 50% 80%;
+    /*background-size: 50% 80%;
     background-attachment: fixed;
     background-position: 50% 68%;
     background-position-y: 50%;
     /*margin-top: -50px;*/
 }
 
-#title-img{
-    /*width: 40%;
-    height: 70%;*/
-    position: fixed;
-    top: 22%;
-    left: 50%;
-    max-width: 100%;
+.title-img{
+    height: 60vh;
+    width: 80vw;
+    border: 1px black solid;
+    background-image: url("https://i.gyazo.com/1b877c9a0f5b42cfb820a22c6132a4db.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: 540px 540px;
 }
+
+/*#title-img{
+    position: relative;
+    bottom: 10vh;
+    left: 35%;
+    max-width: 100%;
+    max-height: 100%;
+}*/
 
 button{
     border: none;
@@ -47,6 +55,16 @@ i{
     border-width: 0 8px 8px 0;
     display: inline-block;
     padding: 15px;
+/*
+    animation-name: flash;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;*/
+}
+
+@keyframes flash{
+    50% {opacity: 0}
+    
 }
 
 /* orientes arrow to be right */
@@ -129,6 +147,6 @@ h3{
     text-align: center;
 }
 
-#instructions, #gameboard, #endtext{
+#instructions, #gameboard, #endtext, .title-img{
     display: none;
 }
