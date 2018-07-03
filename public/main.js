@@ -1,12 +1,13 @@
 // AFTER: ALLOW USER TO GUESS 1 LETTER AT A TIME
 // DECIDE ON A SCORING SYSTEM (HOW DOES THE PLAYER LOSE?)
+// give user a message if they have caps lock on
 
 // declare/initialize global variables
 let wordsList = easyWordsArr();   // list of possible words to be guessed
 let randWord = '';      // word to be guessed
 let randNum;            // random number generated to get random word in list
 let correctGuesses = 0;     // how many correct guesses (score)
-let guessesLeft = 10;       // how many guesses player has left
+let guessesLeft = 12;       // how many guesses player has left
 let notInWord = "";         // used to show users incorrect guesses
 let myHangMan;      // to be parts of hangman drawn when user guesses wrong
 let context;        // for canvas
@@ -94,8 +95,8 @@ window.addEventListener("keypress", function updateGame (e) {
         document.getElementById("endText").innerHTML = "You have no more guesses :(";
         document.getElementById("endScreen").style.display = "initial";
         myImg.src = "https://www.cambiumned.nl/wp-content/uploads/2015/03/galgje.gif";
-        myImg.style.height = '30%';
-        myImg.style.width = '30%';
+        myImg.style.height = '22%';
+        myImg.style.width = '22%';
         window.removeEventListener("keypress", updateGame);
     }
     
@@ -108,7 +109,10 @@ window.addEventListener("keypress", function updateGame (e) {
         
         // check if all words have been guessed yet
         if (wordsList.length == 0){
+            document.getElementById("end-img").src = "https://4.bp.blogspot.com/-b1BtoF2dCes/WEjrekT0OCI/AAAAAAAEORE/75qPzUneCJISa8_2DdZdxlx-q584ebpQQCLcB/s1600/AW337697_00.gif";
             document.getElementById("endText").innerHTML = "Congrats! You passed the first round :)";   // victory message
+            document.getElementById("endScreen").style.display = "initial";
+            window.removeEventListener("keypress", updateGame);
         }else{
             randWord = newWord(wordsList);  // get new word
             partOfWord = replaceWithUnderscores(randWord);    // replaces all characters in partOfWord to underscores with length of the new randWord
@@ -158,7 +162,7 @@ function removeWordFromList(list){
 
 // Array of easy words to guess
 function easyWordsArr(){
-    return ['rest', 'beast', 'sat', 'dude', 'coat', 'food', 'mood', ''];
+    return ['rest', 'beast', 'sat', 'dude', 'coat', 'food', 'mood', 'bad'];
 }
 
 setInterval(blinkingBtn, 500);
