@@ -10,8 +10,7 @@
     <body>
         <div id="title">
             <h1>Hangman</h1>
-            <!--<a href="#" class="next round">&#8250;</a> a tag is for hyperlinks to other pages -->
-            <button class="right_button" id="titleToIns"><i class="arrow_right"></i></button>  <!-- just an arrow - doesn't do anything -->
+            <button class="right_button" id="titleToIns"><i class="arrow_right"></i></button>  <!-- right arrow -->
         </div>
         
         <div id="instructions">
@@ -29,8 +28,11 @@
             <p id="score">Score: 0</p>
             <br>
             <p id="wordToGuess"></p>
-            <p id="lettersNotInWord"></p>
-            <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+            <p id="incorrectlyGuessedLetters">Incorrectly Guessed Letters</p>
+            <div class="lettersNotInWord">
+                <p id="lettersNotInWord"></p>
+            </div>
+            <!--<canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>-->
         </div>
 
         <!-- end game text displays in p tag - text depends on whether player wins/loses -->

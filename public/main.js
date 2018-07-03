@@ -11,7 +11,7 @@ let notInWord = "";         // used to show users incorrect guesses
 let myHangMan;      // to be parts of hangman drawn when user guesses wrong
 let context;        // for canvas
 //let drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];  // in order to draw hangman, starting from last index
-randWord = newWord(wordsList);  // get new random work in wordsList
+randWord = newWord(wordsList);  // get new random word in wordsList
 
 // sets partOfWord to have the same number of underscores as the word to be guessed (randWord)
 let partOfWord = '';
